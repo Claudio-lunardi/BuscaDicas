@@ -1,5 +1,6 @@
 ﻿using BuscaDicas.Infra.Entity;
 using BuscaDicas.Modelo;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,11 @@ namespace BuscaDicasNegocio
         public Dicas(EntityContext entityContext)
         {
             _entityContext = entityContext;
+        }
+
+        public async Task<List<DicasModel>> BuscarDicas()
+        {
+            return await _entityContext.Dicas.ToListAsync();
         }
 
         public async Task IncluirDicas(DicasModel dicasModel)

@@ -10,5 +10,7 @@ namespace BuscaDicasNegocio
     public interface Idicas
     {
         Task IncluirDicas(DicasModel dicasModel);
+
+        Task<List<DicasModel>> BuscarDicas();
     }
 }

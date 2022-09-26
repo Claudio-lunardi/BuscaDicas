@@ -20,9 +20,13 @@ namespace BuscaDicas.API.Controllers
         [HttpPost]
         public async Task IncluirDica(DicasModel dicasModel)
         {
-           await _dicas.IncluirDicas(dicasModel);
+            await _dicas.IncluirDicas(dicasModel);
         }
-
+        [HttpGet]
+        public async Task<List<DicasModel>> BuscarDicas()
+        {
+            return await _dicas.BuscarDicas();
+        }
 
     }
 }
